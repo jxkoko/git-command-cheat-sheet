@@ -2,7 +2,10 @@
 | :--- | :--- |
 |git --version|バージョン確認|
 |git blame <ファイル名>|ファイルの中身を表示する|
-|git config --global --unset <キー>|設定したキーを削除する(※キー:user.nameなど)|
+|git config --unset <キー>|ローカルで設定したキーを削除する(※キー:user.nameなど)|
+|git config --global --unset <キー>|グローバルで設定したキーを削除する(※キー:user.nameなど)|
+|git config --list|ローカルのconfig設定値を確認する|
+|git config --global --list|グローバルのconfig設定値を確認する|
 |git add --dry-run .|git addで何が実行されるか表示|
 |git citool|GUIのコミット画面が表示される|
 |git add -p|変更があったファイルの編集画面が開き、各行を部分的にaddする|
@@ -23,6 +26,8 @@
 |git log -N|N番目までのログを表示する|
 |git log --relative-date|何日前にコミットされたかでログを表示する|
 |git log <ファイル名>|特定のファイルのログのみ表示|
+|git log --graph --decorate --pretty=oneline --all --abbrev-commit|ブランチ分岐も表現しつついい感じに全てのコミットログを表示する|
+|git config --global alias.lol "log --graph --decorate --pretty=oneline --all --abbrev-commit"|git lolでいい感じのログを出すようにエイリアスをグローバルに設定した|
 |git rev-parse HEAD|HEADををSHA1 IDに変換する|
 |git rev-parse master|masterをSHA1 IDに変換する|
 |git rev-parse :/"コメント"|指定したコメントを含むコミットのSHA1 IDを表示する|
@@ -31,5 +36,7 @@
 |git tag <タグ名> -m "コメント" <SHA1 ID>|SHA1 IDのコミットにコメント付きでタグを打つ|
 |git tag -d <タグ名>|タグを削除する|
 |git commit --amend -m "コメント"|直前のコミットを上書きする形でコミットする|
+|git branch -v|SHA1 IDと共にブランチを表示する|
+
 
 
