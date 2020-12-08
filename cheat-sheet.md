@@ -13,6 +13,8 @@
 |git reset HEAD <ファイル名>|ステージングエリアの変更を無かったことにする(HEAD付き)|
 |git branch <新ブランチ名> <元ブランチ or SHA1 ID>|元ブランチまたはSHA1 IDの地点から新ブランチを作成する|
 |git branch -d <ブランチ名>|ブランチを削除する|
+|git branch -m <旧ブランチ名> <新ブランチ名>|ブランチ名をリネームする|
+|git branch --contains <タグ名>|指定したタグを含むブランチを表示する|
 |git reflog|git操作をした直後のHEADの地点をSHA1 IDで表示する|
 |git checkout -b <新ブランチ> <元ブランチ or SHA1 ID>|元ブランチまたはSHA1 IDの地点から新ブランチを作成してチェックアウトする|
 |git checkout -- <ファイル名>|そのファイルに最後にコミットされた状態にチェックアウトする|
@@ -37,9 +39,11 @@
 |git log <ファイル名>|特定のファイルのログのみ表示|
 |git log --graph --decorate --pretty=oneline --all --abbrev-commit|ブランチ分岐も表現しつついい感じに全てのコミットログを表示する|
 |git config --global alias.lol "log --graph --decorate --pretty=oneline --all --abbrev-commit"|git lolでいい感じのログを出すようにエイリアスをグローバルに設定する|
+|git log --oneline --decorate --simplify-by-decoration --all|「どのブランチで」「どのタグで」の情報と共にログを表示する|
 |git rev-parse HEAD|HEADををSHA1 IDに変換する|
 |git rev-parse master|masterをSHA1 IDに変換する|
 |git rev-parse :/"コメント"|指定したコメントを含むコミットのSHA1 IDを表示する|
+|git rev-parse --tags=<タグ名>|<タグ名>に該当するSHA1 IDを表示する(<タグ名>は正規表現も可能)|
 |git show <SHA1 ID>|SHA1 IDのコミット内容を表示する|
 |git show <タグ名>|タグのコミット内容を表示する|
 |git tag <タグ名> -m "コメント" <SHA1 ID>|SHA1 IDのコミットにコメント付きでタグを打つ|
